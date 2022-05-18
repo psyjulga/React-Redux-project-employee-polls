@@ -1,0 +1,21 @@
+.button {
+  margin-left: 30px;
+  border: none;
+  font-size: 18px;
+  background-color: white;
+  transition: all 300ms ease-in-out;
+}
+
+.button:hover {
+  color: rgb(16, 173, 194);
+  cursor: pointer;
+}
+
+.dashboard-heading {
+  margin-left: 80px;
+}
+
+.active {
+  font-size: 20px;
+  font-weight: bold;
+}

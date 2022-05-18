@@ -1,0 +1,40 @@
+* {
+  color: rgb(6, 68, 68);
+}
+
+ul {
+  list-style: none;
+}
+
+.poll-heading {
+  font-size: 16px;
+}
+
+.poll-color-light {
+  color: rgb(16, 173, 194);
+}
+
+.poll {
+  border: 2px solid rgb(16, 173, 194);
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 3px 3px 3px rgb(173, 235, 243);
+  background-color: rgb(243, 240, 218);
+}
+
+.none {
+  text-decoration: none;
+}
+
+.poll-option {
+  font-size: 14px;
+}
+
+.poll-percent {
+  padding-left: 50px;
+}
+
+.padding {
+  padding: 4px;
+}

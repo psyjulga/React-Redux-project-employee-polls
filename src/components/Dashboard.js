@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { connect } from "react-redux";
 import Poll from "./Poll";
+import "../styles/dashboard.css";
 
 const Dashboard = (props) => {
   console.log("Props from Dashboard: ", props);
@@ -12,30 +14,58 @@ const Dashboard = (props) => {
     questionsArr.push(questions[questionIds[i]]);
   }
 
-  console.log("arr", questionsArr);
   const answeredQuestions = questionsArr.filter(
     (q) =>
       q.optionOne.votes.includes(authedUser) ||
       q.optionTwo.votes.includes(authedUser)
   );
 
-  console.log("answered", answeredQuestions);
+  const unansweredQuestions = questionsArr.filter(
+    (q) =>
+      !q.optionOne.votes.includes(authedUser) &&
+      !q.optionTwo.votes.includes(authedUser)
+  );
 
-  // const filteredAndSorted = () =>
-  //   questionIds.filter((id) => answeredQuestions.contains(id));
+  const [questionsToDisplay, setQuestionsToDisplay] =
+    useState(answeredQuestions);
+  const [active, setActive] = useState(true);
+
+  const showAnswered = () => {
+    setQuestionsToDisplay(answeredQuestions);
+    setActive(true);
+  };
+
+  const showUnanswered = () => {
+    setQuestionsToDisplay(unansweredQuestions);
+    setActive(false);
+  };
 
   return (
-    <div>
-      <h1>Answered</h1>
+    <div className="dashboard">
+      <h1 className="dashboard-heading">
+        <button
+          className={active ? "button active" : "button"}
+          onClick={showAnswered}
+        >
+          Answered
+        </button>
+        <button
+          className={!active ? "button active" : "button"}
+          onClick={showUnanswered}
+        >
+          Unanswered
+        </button>
+      </h1>
+
       <ul>
-        {answeredQuestions.length > 0 ? (
-          answeredQuestions.map((q) => (
+        {questionsToDisplay.length > 0 ? (
+          questionsToDisplay.map((q) => (
             <li key={q.id}>
               <Poll id={q.id} />
             </li>
           ))
         ) : (
-          <div>no answered polls available</div>
+          <div>no polls available</div>
         )}
       </ul>
     </div>
