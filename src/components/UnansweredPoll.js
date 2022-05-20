@@ -13,12 +13,11 @@ const UnansweredPoll = (props) => {
   const date = formatDate(timestamp);
 
   return (
-    <Link to={`/questions/:question_${id}`} className="none ">
+    <Link to={`/questions/:question_${id}`} className="none">
       <div className="poll">
         <div className="poll-left">
           <h1 className="poll-color poll-heading">
             Would you rather
-            <br />
             <div className="poll-color-light padding">
               <input type="radio" name="options" value="option-one" />
               {optionOne.text}

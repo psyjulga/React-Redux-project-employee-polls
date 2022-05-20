@@ -43,6 +43,5 @@ const App = (props) => {
 const mapStateToProps = ({ authedUser }) => ({
   loading: authedUser === null,
 });
-// props.loading => true / false => if authedUser
 
 export default connect(mapStateToProps)(App);
