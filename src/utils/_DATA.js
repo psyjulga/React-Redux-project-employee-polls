@@ -2,11 +2,12 @@
 
 // USERS
 let users = {
-  sarahedo: {
-    id: "sarahedo",
+  lisasimpson: {
+    id: "lisasimpson",
     password: "password123",
-    name: "Sarah Edo",
-    avatarURL: null,
+    name: "Lisa Simpson",
+    avatarURL:
+      "https://i2.wp.com/www.generazionepost.it/wp-content/uploads/2019/09/lisa0.png",
     answers: {
       "8xf0y6ziyjabvozdd253nd": "optionOne",
       "6ni6ok3ym7mf1p33lnez": "optionOne",
@@ -15,22 +16,23 @@ let users = {
     },
     questions: ["8xf0y6ziyjabvozdd253nd", "am8ehyc8byjqgar0jgpub9"],
   },
-  tylermcginnis: {
-    id: "tylermcginnis",
+  bartsimpson: {
+    id: "bartsimpson",
     password: "abc321",
-    name: "Tyler McGinnis",
-    avatarURL: null,
+    name: "Bart Simpson",
+    avatarURL:
+      "http://vignette1.wikia.nocookie.net/de.simpsons/images/6/65/Bart_Simpson.png/revision/latest?cb=20151231102024",
     answers: {
       vthrdm985a262al8qx3do: "optionOne",
       xj352vofupe1dqz9emx13r: "optionTwo",
     },
     questions: ["loxhs1bqm25b708cmbf3g", "vthrdm985a262al8qx3do"],
   },
-  mtsamis: {
-    id: "mtsamis",
+  hsimpson: {
+    id: "hsimpson",
     password: "xyz123",
-    name: "Mike Tsamis",
-    avatarURL: null,
+    name: "Homer Simpson",
+    avatarURL: "https://pngimg.com/uploads/simpsons/simpsons_PNG6.png",
     answers: {
       xj352vofupe1dqz9emx13r: "optionOne",
       vthrdm985a262al8qx3do: "optionTwo",
@@ -38,11 +40,12 @@ let users = {
     },
     questions: ["6ni6ok3ym7mf1p33lnez", "xj352vofupe1dqz9emx13r"],
   },
-  zoshikanlu: {
-    id: "zoshikanlu",
+  msimpson: {
+    id: "msimpson",
     password: "pass246",
-    name: "Zenobia Oshikanlu",
-    avatarURL: null,
+    name: "Marge Simpson",
+    avatarURL:
+      "https://cdn.quotesgram.com/img/52/80/1455825690-500_MargeSimpson5.gif",
     answers: {
       xj352vofupe1dqz9emx13r: "optionOne",
     },
@@ -54,10 +57,10 @@ let users = {
 let questions = {
   "8xf0y6ziyjabvozdd253nd": {
     id: "8xf0y6ziyjabvozdd253nd",
-    author: "sarahedo",
+    author: "lisasimpson",
     timestamp: 1467166872634,
     optionOne: {
-      votes: ["sarahedo"],
+      votes: ["lisasimpson"],
       text: "Build our new application with Javascript",
     },
     optionTwo: {
@@ -67,66 +70,66 @@ let questions = {
   },
   "6ni6ok3ym7mf1p33lnez": {
     id: "6ni6ok3ym7mf1p33lnez",
-    author: "mtsamis",
+    author: "hsimpson",
     timestamp: 1468479767190,
     optionOne: {
       votes: [],
       text: "hire more frontend developers",
     },
     optionTwo: {
-      votes: ["mtsamis", "sarahedo"],
+      votes: ["hsimpson", "lisasimpson"],
       text: "hire more backend developers",
     },
   },
   am8ehyc8byjqgar0jgpub9: {
     id: "am8ehyc8byjqgar0jgpub9",
-    author: "sarahedo",
+    author: "lisasimpson",
     timestamp: 1488579767190,
     optionOne: {
       votes: [],
       text: "conduct a release retrospective 1 week after a release",
     },
     optionTwo: {
-      votes: ["sarahedo"],
+      votes: ["lisasimpson"],
       text: "conduct release retrospectives quarterly",
     },
   },
   loxhs1bqm25b708cmbf3g: {
     id: "loxhs1bqm25b708cmbf3g",
-    author: "tylermcginnis",
+    author: "bartsimpson",
     timestamp: 1482579767190,
     optionOne: {
       votes: [],
       text: "have code reviews conducted by peers",
     },
     optionTwo: {
-      votes: ["sarahedo"],
+      votes: ["lisasimpson"],
       text: "have code reviews conducted by managers",
     },
   },
   vthrdm985a262al8qx3do: {
     id: "vthrdm985a262al8qx3do",
-    author: "tylermcginnis",
+    author: "bartsimspson",
     timestamp: 1489579767190,
     optionOne: {
-      votes: ["tylermcginnis"],
+      votes: ["bartsimspson"],
       text: "take a course on ReactJS",
     },
     optionTwo: {
-      votes: ["mtsamis"],
+      votes: ["hsimpson"],
       text: "take a course on unit testing with Jest",
     },
   },
   xj352vofupe1dqz9emx13r: {
     id: "xj352vofupe1dqz9emx13r",
-    author: "mtsamis",
+    author: "hsimpson",
     timestamp: 1493579767190,
     optionOne: {
-      votes: ["mtsamis", "zoshikanlu"],
+      votes: ["hsimpson", "msimpson"],
       text: "deploy to production once every two weeks",
     },
     optionTwo: {
-      votes: ["tylermcginnis"],
+      votes: ["bartsimpson"],
       text: "deploy to production once every month",
     },
   },

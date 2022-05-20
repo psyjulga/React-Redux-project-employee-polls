@@ -1,9 +1,10 @@
-import Poll from "./Poll";
+// import Poll from "./Poll";
 
 const PollPage = () => {
   return (
     <div>
-      <Poll />
+      Hello from PollPage
+      {/* <Poll /> */}
     </div>
   );
 };
