@@ -7,7 +7,6 @@
   transition: all 300ms ease-in-out;
   border: 1px solid rgb(16, 173, 194);
   border-radius: 5px;
-
   box-shadow: 2px 2px 2px rgb(173, 235, 243);
   background-color: rgb(243, 240, 218);
 }

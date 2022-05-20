@@ -109,7 +109,7 @@ let questions = {
   },
   vthrdm985a262al8qx3do: {
     id: "vthrdm985a262al8qx3do",
-    author: "bartsimspson",
+    author: "bartsimpson",
     timestamp: 1489579767190,
     optionOne: {
       votes: ["bartsimspson"],
