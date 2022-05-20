@@ -1,15 +1,12 @@
 // receive data / handle initial data api call
 // for App.js
-// => get questions
+// => get questions and users
 
-import { _getQuestions } from "../utils/_DATA";
+import { _getInitialData } from "../utils/_DATA";
 import { receiveQuestions } from "./questions";
-// import { receiveUsers } from "./users";
+import { receiveUsers } from "./users";
 import { setAuthedUser } from "./authedUser";
 import { showLoading, hideLoading } from "react-redux-loading-bar";
-
-const AUTHED_ID = "sarahedo";
-// TO DO: choose a user in dropdown
 
 // returns a function
 // => for thunk middleware to apply
@@ -18,13 +15,18 @@ const AUTHED_ID = "sarahedo";
 export function handleInitialData() {
   return (dispatch) => {
     dispatch(showLoading());
-    return _getQuestions().then((questions) => {
-      // dispatch(receiveUsers(users));
+    return _getInitialData().then(({ users, questions }) => {
+      dispatch(receiveUsers(users));
       dispatch(receiveQuestions(questions));
-      dispatch(setAuthedUser(AUTHED_ID));
       // = dispatch(action)
       // inside dispatch reducer updates the store
       dispatch(hideLoading());
     });
+  };
+}
+
+export function handleLogin(AUTHED_ID) {
+  return (dispatch) => {
+    dispatch(setAuthedUser(AUTHED_ID));
   };
 }

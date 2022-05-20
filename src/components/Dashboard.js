@@ -20,6 +20,8 @@ const Dashboard = (props) => {
       q.optionTwo.votes.includes(authedUser)
   );
 
+  console.log("answered questions", answeredQuestions);
+
   const unansweredQuestions = questionsArr.filter(
     (q) =>
       !q.optionOne.votes.includes(authedUser) &&

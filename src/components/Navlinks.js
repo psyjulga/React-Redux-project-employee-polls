@@ -1,10 +1,25 @@
+import { Link } from "react-router-dom";
+import "../styles/navlinks.css";
+
 const Navlinks = () => {
   return (
-    <div className="navlinks">
-      <a>Home</a>
-      <a>New Poll</a>
-      <a>Leaderboard</a>
-    </div>
+    <ul className="navlinks">
+      <li className="horizontal">
+        <Link to={"/"} className="none">
+          Home
+        </Link>
+      </li>
+      <li className="horizontal">
+        <Link to={"/add"} className="none">
+          New Poll
+        </Link>
+      </li>
+      <li className="horizontal">
+        <Link to={"/leaderboard"} className="none">
+          Leaderboard
+        </Link>
+      </li>
+    </ul>
   );
 };
 
