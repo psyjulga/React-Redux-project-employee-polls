@@ -4,7 +4,6 @@ import AnsweredPoll from "./AnsweredPoll";
 import UnansweredPoll from "./UnansweredPoll";
 
 const Poll = (props) => {
-  console.log("props from poll", props);
   const { poll, authedUser } = props;
   const { optionOne, optionTwo } = poll;
 

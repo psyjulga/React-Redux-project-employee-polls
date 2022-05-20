@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import Poll from "./Poll";
 import "../styles/dashboard.css";
 
@@ -58,7 +59,9 @@ const Dashboard = (props) => {
         {questionsToDisplay.length > 0 ? (
           questionsToDisplay.map((q) => (
             <li key={q.id}>
-              <Poll id={q.id} />
+              <Link to={`/questions/:question_${q.id}`} className="none">
+                <Poll id={q.id} />
+              </Link>
             </li>
           ))
         ) : (
