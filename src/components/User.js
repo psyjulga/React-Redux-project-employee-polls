@@ -1,10 +1,14 @@
 import { connect } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { handleLogin } from "../actions/shared";
 import "../styles/user.css";
 
 const User = (props) => {
+  const navigate = useNavigate();
+
   const logout = () => {
     props.dispatch(handleLogin(null));
+    navigate("/");
   };
 
   return (

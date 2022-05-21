@@ -1,23 +1,24 @@
 import { handleInitialData } from "../actions/shared";
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect } from "react";
 import { connect } from "react-redux";
 import { LoadingBar } from "react-redux-loading-bar";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import Dashboard from "./Dashboard";
 import Navbar from "./Navbar";
 import PollPage from "./PollPage";
+import NewPoll from "./NewPoll";
+import Leaderboard from "./Leaderboard";
 import Footer from "./Footer";
 import Login from "./Login";
 import "../styles/app.css";
 
 const App = (props) => {
-  console.log("Props from App: ", props);
-
-  // const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
+    navigate("/");
     props.dispatch(handleInitialData());
-  }, []);
+  }, [props.loading]);
 
   return (
     <Fragment>
@@ -30,8 +31,8 @@ const App = (props) => {
           <Routes>
             <Route exact path="/" element={<Dashboard />} />
             <Route path="/questions/:question_id" element={<PollPage />} />
-            {/* <Route path="/add" element={<NewPoll />} /> */}
-            {/* <Route path="/leaderboard" element={<Leaderboard />} /> */}
+            <Route path="/add" element={<NewPoll />} />
+            <Route path="/leaderboard" element={<Leaderboard />} />
           </Routes>
         )}
         <Footer />
