@@ -25,7 +25,11 @@ const UnansweredPoll = (props) => {
       <div className="poll-left">
         <h1 className="poll-color poll-heading">
           Would you rather
-          <div className="radiobuttons" onChange={chooseOption}>
+          <div
+            data-testid="test-radiobuttons"
+            className="radiobuttons"
+            onChange={chooseOption}
+          >
             <div className="poll-color-light padding">
               <input type="radio" name="options" value="optionOne" />
               {optionOne.text}

@@ -14,11 +14,11 @@ const NewPoll = (props) => {
   const handlePollSubmit = (e) => {
     e.preventDefault();
 
-    dispatch(handleSaveQuestion(question));
-
-    setQuestion({ author: authedUser });
-    setDisabled(true);
-    navigate("/");
+    dispatch(handleSaveQuestion(question)).then(() => {
+      setQuestion({ author: authedUser });
+      setDisabled(true);
+      navigate("/");
+    });
   };
 
   const handleInputChange = (e) => {

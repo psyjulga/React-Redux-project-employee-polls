@@ -24,7 +24,6 @@ export function handleAnswerQuestion({ authedUser, qid, answer }) {
       answer,
     })
       .then(() => {
-        // saves question and returns / resolves "true"
         dispatch(addAnswer({ authedUser, qid, answer }));
       })
       .then(() => dispatch(hideLoading()));

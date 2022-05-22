@@ -13,10 +13,10 @@ const Poll = (props) => {
 
   return (
     <div className="poll-container">
-      {!notAnsweredYet ? (
-        <AnsweredPoll poll={poll} />
-      ) : (
+      {notAnsweredYet ? (
         <UnansweredPoll poll={poll} />
+      ) : (
+        <AnsweredPoll poll={poll} />
       )}
     </div>
   );

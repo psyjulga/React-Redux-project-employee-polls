@@ -33,11 +33,27 @@ describe("_saveQuestion", () => {
   });
 });
 
-// TODO:
-// describe("_saveQuestionAnswer", () => {
-//   test("returns the saved answer with all expected fields populated when correctly formatted data is passed to the function", async () => {});
+describe("_saveQuestionAnswer", () => {
+  test("returns the saved answer with all expected fields populated when correctly formatted data is passed to the function", async () => {
+    const mockAnswer = {
+      authedUser: "lisasimpson",
+      qid: "8xf0y6ziyjabvozdd253nd",
+      answer: "optionOne",
+    };
 
-// });
+    const { users, questions } = await _saveQuestionAnswer(mockAnswer);
+
+    expect(
+      users[mockAnswer.authedUser].answers[mockAnswer.qid] === mockAnswer.answer
+    ).toBe(true);
+
+    expect(
+      questions[mockAnswer.qid][mockAnswer.answer].votes.includes(
+        mockAnswer.authedUser
+      )
+    ).toBe(true);
+  });
+});
 
 describe("_saveQuestionAnswer", () => {
   test("returns an error when incorrect data is passed to the function", async () => {

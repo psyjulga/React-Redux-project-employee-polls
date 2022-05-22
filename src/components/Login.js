@@ -19,7 +19,11 @@ const Login = (props) => {
       <h1 className="login-heading">EMPLOYEE POLLS</h1>
       <div className="login">
         <h1>Login</h1>
-        <select name="login" onChange={(e) => login(e)}>
+        <select
+          data-testid="test-select"
+          name="login"
+          onChange={(e) => login(e)}
+        >
           <option>choose your username</option>
           {usersArr.map((user) => (
             <option key={user.id} value={user.id}>

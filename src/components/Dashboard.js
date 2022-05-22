@@ -25,33 +25,33 @@ const Dashboard = (props) => {
   );
 
   const [questionsToDisplay, setQuestionsToDisplay] =
-    useState(answeredQuestions);
+    useState(unansweredQuestions);
   const [active, setActive] = useState(true);
 
   const showAnswered = () => {
     setQuestionsToDisplay(answeredQuestions);
-    setActive(true);
+    setActive(false);
   };
 
   const showUnanswered = () => {
     setQuestionsToDisplay(unansweredQuestions);
-    setActive(false);
+    setActive(true);
   };
 
   return (
     <div className="dashboard">
-      <h1 className="dashboard-heading">
+      <h1 data-testid="test-dashboard" className="dashboard-heading">
         <button
           className={active ? "button active" : "button"}
-          onClick={showAnswered}
-        >
-          Answered
-        </button>
-        <button
-          className={!active ? "button active" : "button"}
           onClick={showUnanswered}
         >
           Unanswered
+        </button>
+        <button
+          className={!active ? "button active" : "button"}
+          onClick={showAnswered}
+        >
+          Answered
         </button>
       </h1>
 

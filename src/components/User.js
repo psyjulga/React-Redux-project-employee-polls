@@ -19,7 +19,11 @@ const User = (props) => {
         width="35"
         height="35"
       />
-      <button className="logout-button" onClick={logout}>
+      <button
+        data-testid="test-logout"
+        className="logout-button"
+        onClick={logout}
+      >
         Logout
       </button>
     </div>

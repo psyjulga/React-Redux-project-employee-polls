@@ -14,18 +14,19 @@ import "../styles/app.css";
 
 const App = (props) => {
   const navigate = useNavigate();
+  const { loading } = props;
 
   useEffect(() => {
     navigate("/");
     props.dispatch(handleInitialData());
-  }, [props.loading]);
+  }, [loading]);
 
   return (
     <Fragment>
       <LoadingBar />
       <div className="app-container">
         <Navbar />
-        {props.loading === true ? (
+        {loading === true ? (
           <Login />
         ) : (
           <Routes>

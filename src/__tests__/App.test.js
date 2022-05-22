@@ -7,7 +7,7 @@ import { Provider } from "react-redux";
 import store from "../store";
 
 describe("App", () => {
-  test("should render the login form onload", async () => {
+  test("should render the loginform onload", async () => {
     render(
       <MemoryRouter>
         <Provider store={store}>
