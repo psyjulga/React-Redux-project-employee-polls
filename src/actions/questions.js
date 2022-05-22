@@ -40,7 +40,8 @@ export function handleSaveQuestion(question) {
         dispatch(saveQuestion(formattedQuestion));
         dispatch(updateUsersQuestions(formattedQuestion));
       })
-      .then(() => dispatch(hideLoading()));
+      .then(() => dispatch(hideLoading()))
+      .catch((e) => console.log("Error from handleSaveQuestion: ", e));
   };
 }
 

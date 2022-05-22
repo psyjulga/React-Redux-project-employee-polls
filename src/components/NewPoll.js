@@ -36,6 +36,7 @@ const NewPoll = (props) => {
       <form onSubmit={handlePollSubmit} className="poll-form">
         Would you rather <br />
         <input
+          data-testid="test-option-one"
           name="optionOneText"
           value={question.optionOneText}
           onChange={handleInputChange}
@@ -45,6 +46,7 @@ const NewPoll = (props) => {
         />
         or <br />
         <input
+          data-testid="test-option-two"
           name="optionTwoText"
           value={question.optionTwoText}
           onChange={handleInputChange}
