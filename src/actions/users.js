@@ -18,9 +18,10 @@ export function updateUsersAnswers({ authedUser, qid, answer }) {
   };
 }
 
-export function updateUsersQuestions(id) {
+export function updateUsersQuestions(question) {
   return {
     type: UPDATE_USERS_QUESTIONS,
-    id,
+    authedUser: question.author,
+    id: question.id,
   };
 }

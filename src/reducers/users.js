@@ -4,7 +4,7 @@ import {
   UPDATE_USERS_QUESTIONS,
 } from "../actions/users";
 
-function user(state = {}, action) {
+function userAnswer(state = {}, action) {
   const { qid, answer } = action;
   const { answers } = state;
 
@@ -17,29 +17,42 @@ function user(state = {}, action) {
   };
 }
 
+function userQuestion(state = {}, action) {
+  const { id } = action;
+  const { questions } = state;
+
+  return {
+    ...state,
+    questions: questions.concat(id),
+  };
+}
+
 export default function users(state = {}, action) {
   switch (action.type) {
-    case RECEIVE_USERS:
+    case RECEIVE_USERS: {
       return {
         ...state,
         ...action.users,
       };
+    }
 
-    case UPDATE_USERS_ANSWERS:
+    case UPDATE_USERS_ANSWERS: {
       const { authedUser } = action;
 
       return {
         ...state,
-        [authedUser]: user(state[authedUser], action),
+        [authedUser]: userAnswer(state[authedUser], action),
       };
+    }
 
-    case UPDATE_USERS_QUESTIONS:
-      const { id } = action;
+    case UPDATE_USERS_QUESTIONS: {
+      const { authedUser } = action;
 
       return {
         ...state,
-        id,
+        [authedUser]: userQuestion(state[authedUser], action),
       };
+    }
 
     default:
       return state;

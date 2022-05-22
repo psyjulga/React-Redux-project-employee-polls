@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import BoardEntry from "./BoardEntry";
+import "../styles/leaderboard.css";
 
 const Leaderboard = (props) => {
   const { users, userIds } = props;
@@ -30,11 +31,9 @@ const Leaderboard = (props) => {
 
   const sortedArr = usersArr.sort((a, b) => b.sum - a.sum);
 
-  console.log("from leaderboard", sortedArr);
-
   return (
     <div className="leaderboard">
-      <h1> Leaderboard </h1>
+      <h1 className="leaderboard-heading"> Leaderboard </h1>
       <ul>
         {sortedArr.map((user) => {
           return (

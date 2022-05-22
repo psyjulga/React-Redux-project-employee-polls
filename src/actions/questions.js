@@ -35,12 +35,12 @@ export function handleSaveQuestion(question) {
   return (dispatch) => {
     dispatch(showLoading());
 
-    return (
-      _saveQuestion(question)
-        .then((formattedQuestion) => dispatch(saveQuestion(formattedQuestion)))
-        // .then((q)=>updateUsersQuestions(q))
-        .then(() => dispatch(hideLoading()))
-    );
+    return _saveQuestion(question)
+      .then((formattedQuestion) => {
+        dispatch(saveQuestion(formattedQuestion));
+        dispatch(updateUsersQuestions(formattedQuestion));
+      })
+      .then(() => dispatch(hideLoading()));
   };
 }
 

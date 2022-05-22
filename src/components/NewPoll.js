@@ -15,7 +15,6 @@ const NewPoll = (props) => {
     e.preventDefault();
 
     dispatch(handleSaveQuestion(question));
-    dispatch(updateUsersQuestions(question));
 
     setQuestion({ author: authedUser });
     setDisabled(true);

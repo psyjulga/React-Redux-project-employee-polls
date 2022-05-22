@@ -39,7 +39,7 @@ export default function questions(state = {}, action) {
 
     case ANSWER_QUESTION:
       const { qid } = action;
-      console.log("action from answer question", action);
+
       return {
         ...state,
         [qid]: questionX(state[qid], action),

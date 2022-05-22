@@ -7,3 +7,7 @@
   box-shadow: 3px 3px 3px rgb(173, 235, 243);
   background-color: rgb(243, 240, 218);
 }
+
+.login-heading {
+  padding: 20px;
+}
