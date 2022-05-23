@@ -56,7 +56,11 @@ const NewPoll = (props) => {
         />
         ?
         <br />
-        <button disabled={disabled} className="add-button">
+        <button
+          data-testid="test-submit-button"
+          disabled={disabled}
+          className="add-button"
+        >
           Add poll
         </button>
       </form>

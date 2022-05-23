@@ -1,4 +1,22 @@
-import { _saveQuestion, _saveQuestionAnswer } from "../utils/_DATA";
+import {
+  _saveQuestion,
+  _saveQuestionAnswer,
+  _getInitialData,
+  generateUID,
+} from "../utils/_DATA";
+
+describe("_getInitialData", () => {
+  test("returns users and questions", async () => {
+    const { users, questions } = await _getInitialData();
+
+    const numUsers = Object.keys(users).length;
+    const numQuestions = Object.keys(questions).length;
+
+    console.log("num", numUsers, numQuestions);
+
+    expect(numUsers === 4 && numQuestions === 6).toBe(true);
+  });
+});
 
 describe("_saveQuestion", () => {
   test("returns the saved question with all expected fields populated when correctly formatted data is passed to the function", async () => {
@@ -66,5 +84,15 @@ describe("_saveQuestionAnswer", () => {
     await expect(_saveQuestionAnswer(mockAnswer)).rejects.toEqual(
       "Please provide authedUser, qid, and answer"
     );
+  });
+});
+
+describe("generateUID", () => {
+  test("returns a unique id", () => {
+    const id1 = generateUID();
+    const id2 = generateUID();
+    const id3 = generateUID();
+
+    expect(id1 !== id2 && id1 !== id3 && id2 !== id3).toBe(true);
   });
 });

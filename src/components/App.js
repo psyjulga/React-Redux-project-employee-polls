@@ -8,7 +8,6 @@ import Navbar from "./Navbar";
 import PollPage from "./PollPage";
 import NewPoll from "./NewPoll";
 import Leaderboard from "./Leaderboard";
-import Footer from "./Footer";
 import Login from "./Login";
 import "../styles/app.css";
 
@@ -36,7 +35,6 @@ const App = (props) => {
             <Route path="/leaderboard" element={<Leaderboard />} />
           </Routes>
         )}
-        <Footer />
       </div>
     </Fragment>
   );
