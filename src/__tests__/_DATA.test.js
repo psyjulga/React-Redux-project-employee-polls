@@ -51,6 +51,8 @@ describe("_saveQuestion", () => {
   });
 });
 
+// note: I got the idea about how to implement this test from a github repo
+// => https://github.com/shivrana123/Employee-Poll---Udacity/blob/main/src/App.test.js
 describe("_saveQuestionAnswer", () => {
   test("returns the saved answer with all expected fields populated when correctly formatted data is passed to the function", async () => {
     const mockAnswer = {
