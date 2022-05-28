@@ -9,6 +9,7 @@ import PollPage from "./PollPage";
 import NewPoll from "./NewPoll";
 import Leaderboard from "./Leaderboard";
 import Login from "./Login";
+import NotFound from "./NotFound";
 import "../styles/app.css";
 
 const App = (props) => {
@@ -27,6 +28,7 @@ const App = (props) => {
           <Login />
         ) : (
           <Routes>
+            <Route path="*" element={<NotFound page="page" />} />
             <Route exact path="/" element={<Dashboard />} />
             <Route path="/questions/:question_id" element={<PollPage />} />
             <Route path="/add" element={<NewPoll />} />

@@ -9,7 +9,7 @@ const PollPage = (props) => {
   const { question_id } = useParams();
   const id = question_id.replace(":question_", "");
 
-  return idsArr.includes(id) ? <Poll id={id} /> : <NotFound />;
+  return idsArr.includes(id) ? <Poll id={id} /> : <NotFound page="poll" />;
 };
 
 const mapStateToProps = ({ questions }) => {
