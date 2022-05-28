@@ -2,7 +2,7 @@ import { handleInitialData } from "../actions/shared";
 import { Fragment, useEffect } from "react";
 import { connect } from "react-redux";
 import { LoadingBar } from "react-redux-loading-bar";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Dashboard from "./Dashboard";
 import Navbar from "./Navbar";
 import PollPage from "./PollPage";
@@ -12,11 +12,9 @@ import Login from "./Login";
 import "../styles/app.css";
 
 const App = (props) => {
-  const navigate = useNavigate();
   const { loading } = props;
 
   useEffect(() => {
-    navigate("/");
     props.dispatch(handleInitialData());
   }, [loading]);
 
