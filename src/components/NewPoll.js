@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { handleSaveQuestion } from "../actions/questions";
@@ -8,14 +8,30 @@ const NewPoll = (props) => {
   const { authedUser, dispatch } = props;
   const navigate = useNavigate();
 
-  const [question, setQuestion] = useState({ author: authedUser });
+  const initialQuestionObject = {
+    author: authedUser,
+    optionOneText: "",
+    optionTwoText: "",
+  };
+
+  const [question, setQuestion] = useState(initialQuestionObject);
   const [disabled, setDisabled] = useState(true);
+
+  const checkInput = () => {
+    if (question.optionOneText !== "" && question.optionTwoText !== "") {
+      setDisabled(false);
+    }
+  };
+
+  useEffect(() => {
+    checkInput();
+  }, [question]);
 
   const handlePollSubmit = (e) => {
     e.preventDefault();
 
     dispatch(handleSaveQuestion(question)).then(() => {
-      setQuestion({ author: authedUser });
+      setQuestion(initialQuestionObject);
       setDisabled(true);
       navigate("/");
     });
@@ -24,10 +40,6 @@ const NewPoll = (props) => {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setQuestion({ ...question, [name]: value });
-
-    if (question.optionOneText !== "" && question.optionTwoText !== "") {
-      setDisabled(false);
-    }
   };
 
   return (
