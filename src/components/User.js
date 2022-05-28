@@ -6,6 +6,8 @@ import "../styles/user.css";
 const User = (props) => {
   const navigate = useNavigate();
 
+  const { avatarURL, name } = props;
+
   const logout = () => {
     props.dispatch(handleLogin(null));
     navigate("/");
@@ -14,8 +16,8 @@ const User = (props) => {
   return (
     <div className="user">
       <img
-        src={props.avatarURL}
-        alt={`${props.name.toLowerCase()} avatar`}
+        src={avatarURL}
+        alt={`${name.toLowerCase()} avatar`}
         width="35"
         height="35"
       />
@@ -26,16 +28,17 @@ const User = (props) => {
       >
         Logout
       </button>
+      <div className="user-name">{name}</div>
     </div>
   );
 };
 
 const mapStateToProps = ({ authedUser, users }) => {
   const user = users[authedUser];
-  const { avatarURL } = user;
+  const { avatarURL, name } = user;
   return {
     avatarURL,
-    name: user.name,
+    name,
   };
 };
 

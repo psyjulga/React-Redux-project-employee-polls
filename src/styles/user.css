@@ -15,3 +15,10 @@
   cursor: pointer;
   color: rgb(16, 173, 194);
 }
+
+.user-name {
+  font-size: 14px;
+  position: relative;
+  top: -6px;
+  right: -10px;
+}
