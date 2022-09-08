@@ -4,8 +4,8 @@ Masterschool React part two - welcome to Redux! In big applications, it's all ab
 
 This is my code for the final assessment project for Udacity's React & Redux course.
 
-Run npm install and npm start to install and launch the project.
-Run npm test to run tests.
+Run `npm install` and `npm start` to install and launch the project.
+Run `npm test` to run tests.
 
 Employee Polls is an app for creating, sharing and answering polls in a team.
 A poll always consists of two options: Would you rather A or B?
