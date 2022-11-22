@@ -2,6 +2,12 @@
 
 Masterschool React part two - welcome to Redux! In big applications, it's all about state management. A lot new stuff to learn in the first place, but amazing to apply throughout the course and in the final project. We built employee polls all from scratch, so I didn't only have the opportunity to work with React and Redux, but also CSS again. 💛
 
+## Have a look yourself:
+
+[employee-polls-react-redux.netlify.app](employee-polls-react-redux.netlify.app)
+
+# About
+
 This is my code for the final assessment project for Udacity's React & Redux course.
 
 Run `npm install` and `npm start` to install and launch the project.
