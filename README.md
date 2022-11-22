@@ -4,7 +4,7 @@ Masterschool React part two - welcome to Redux! In big applications, it's all ab
 
 ## Have a look yourself:
 
-[employee-polls-react-redux.netlify.app](employee-polls-react-redux.netlify.app)
+[https://employee-polls-react-redux.netlify.app/](https://employee-polls-react-redux.netlify.app/)
 
 # About
 
