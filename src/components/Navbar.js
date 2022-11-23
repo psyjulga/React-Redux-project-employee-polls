@@ -1,19 +1,18 @@
-import { connect } from "react-redux";
-import Navlinks from "./Navlinks";
-import User from "./User";
-import "../styles/navbar.css";
+import { connect } from 'react-redux'
+import Navlinks from './Navlinks'
+import User from './User'
 
 const Navbar = (props) => {
-  return (
-    <div className="navbar">
-      <Navlinks />
-      {!props.loading && <User />}{" "}
-    </div>
-  );
-};
+	return (
+		<div className="navbar">
+			<Navlinks />
+			{!props.loading && <User />}{' '}
+		</div>
+	)
+}
 
 const mapStateToProps = ({ authedUser }) => ({
-  loading: authedUser === null,
-});
+	loading: authedUser === null,
+})
 
-export default connect(mapStateToProps)(Navbar);
+export default connect(mapStateToProps)(Navbar)
